@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="grid place-items-center min-h-screen text-9xl">Home</div>
+    <div className="grid min-h-screen place-items-center text-9xl">Home</div>
   );
 };
 

@@ -1,10 +1,14 @@
 import Counter from "@/components/Counter/Counter";
-import React from "react";
+import HooksCounter from "@/components/Counter/HooksCounter";
+import DynamicCounter from "@/components/Counter/DynamicCounter";
 
 const CounterPage = () => {
   return (
-    <div>
+    <div className="grid h-screen gap-10 place-items-center ">
       <Counter />
+      <Counter dynamic />
+      {/* <HooksCounter />
+      <DynamicCounter /> */}
     </div>
   );
 };
