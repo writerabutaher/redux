@@ -1,10 +1,10 @@
 "use client";
 
-import { useDispatch, useSelector } from "react-redux";
 import {
   actionDecrement,
   actionIncrement,
-} from "../redux/dynamicCounter/actions";
+} from "@/redux/dynamicCounter/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const DynamicCounter = () => {
   const count = useSelector((state) => state.dynamicCounter.value);

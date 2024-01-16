@@ -1,10 +1,7 @@
 "use client";
 
+import { actionDecrement, actionIncrement } from "@/redux/counter/actions";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  actionIncrement,
-  actionDecrement,
-} from "@/components/redux/counter/actions";
 
 const HooksCounter = () => {
   const count = useSelector((state) => state.counter.value);

@@ -1,14 +1,11 @@
 "use client";
 
-import { connect } from "react-redux";
+import { actionDecrement, actionIncrement } from "@/redux/counter/actions";
 import {
-  actionIncrement,
-  actionDecrement,
-} from "@/components/redux/counter/actions";
-import {
-  actionIncrement as dynamicIncrement,
   actionDecrement as dynamicDecrement,
-} from "@/components/redux/dynamicCounter/actions";
+  actionIncrement as dynamicIncrement,
+} from "@/redux/dynamicCounter/actions";
+import { connect } from "react-redux";
 
 const Counter = ({ count, increment, decrement }) => {
   return (
