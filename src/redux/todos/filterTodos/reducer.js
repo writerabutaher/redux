@@ -2,7 +2,7 @@ const { STATUSCHANGED, COLORCHANGED } = require("./actionType");
 
 const initialState = {
   status: "All",
-  color: [],
+  colors: [],
 };
 
 export const filterReducer = (state = initialState, action) => {

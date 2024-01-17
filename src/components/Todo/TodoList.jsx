@@ -41,7 +41,9 @@ const TodoList = ({ todo }) => {
         )}
       </div>
 
-      <div className="flex-1 line-through select-none">{text}</div>
+      <div className={`flex-1 select-none ${completed && "line-through"}`}>
+        {text}
+      </div>
 
       <div
         onClick={() => handleColorChange(id, "green")}

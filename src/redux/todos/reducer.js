@@ -22,14 +22,21 @@ const initialState = [
 ];
 
 const nextTodoId = (todos) => {
-  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
+  const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), 0);
   return maxId + 1;
 };
 
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADDED:
-      return [...state, { id: nextTodoId(state) }];
+      return [
+        ...state,
+        {
+          id: nextTodoId(state),
+          text: action.payload,
+          completed: false,
+        },
+      ];
 
     case TOGGLED:
       return state.map((todo) => {
@@ -57,7 +64,7 @@ export const todoReducer = (state = initialState, action) => {
       });
 
     case DELETED:
-      return state.map((todo) => todo.id !== action.payload);
+      return state.filter((todo) => todo.id !== action.payload);
 
     case ALLCOMPLETED:
       return state.map((todo) => {
