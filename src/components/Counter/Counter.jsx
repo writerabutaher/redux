@@ -4,7 +4,7 @@ import { actionDecrement, actionIncrement } from "@/redux/counter/actions";
 import {
   actionDecrement as dynamicDecrement,
   actionIncrement as dynamicIncrement,
-} from "@/redux/dynamicCounter/actions";
+} from "@/redux/counter/dynamicCounter/actions";
 import { connect } from "react-redux";
 
 const Counter = ({ count, increment, decrement }) => {

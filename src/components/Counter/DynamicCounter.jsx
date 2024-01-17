@@ -3,7 +3,7 @@
 import {
   actionDecrement,
   actionIncrement,
-} from "@/redux/dynamicCounter/actions";
+} from "@/redux/counter/dynamicCounter/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const DynamicCounter = () => {
