@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/Navbar";
 import AllProvider from "@/provider/AllProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" id="root">
       <body className={inter.className}>
-        <AllProvider>{children}</AllProvider>
+        <AllProvider>
+          <Navbar />
+          {children}
+        </AllProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
-import { added, allCompleted, clearCompleted } from "@/redux/todos/actions";
+import { allCompleted, clearCompleted } from "@/redux/todos/actions";
+import addTodo from "@/redux/todos/thunk/addTodo";
 import { GrNotes } from "react-icons/gr";
 import { LiaCheckDoubleSolid } from "react-icons/lia";
 import { LuPlusCircle } from "react-icons/lu";
@@ -12,7 +13,7 @@ const TodoHeader = () => {
     const text = e.target.text.value;
 
     if (text.length > 0) {
-      dispatch(added(text));
+      dispatch(addTodo(text));
     }
 
     e.target.reset();
