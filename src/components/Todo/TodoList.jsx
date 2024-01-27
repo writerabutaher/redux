@@ -1,4 +1,6 @@
-import { colorSelected, deleted, toggled } from "@/redux/todos/actions";
+import deleteTodo from "@/redux/todos/thunk/deleteTodo";
+import updateColor from "@/redux/todos/thunk/updateColor";
+import updateStatus from "@/redux/todos/thunk/updateStatus";
 import { LuPlusCircle } from "react-icons/lu";
 import { useDispatch } from "react-redux";
 
@@ -8,21 +10,21 @@ const TodoList = ({ todo }) => {
   const dispatch = useDispatch();
 
   const handleStatusChange = (todoId) => {
-    dispatch(toggled(todoId));
+    dispatch(updateStatus(todoId, completed));
   };
 
   const handleColorChange = (todoId, color) => {
-    dispatch(colorSelected(todoId, color));
+    dispatch(updateColor(todoId, color));
   };
 
   const handleDelete = (todoId) => {
-    dispatch(deleted(todoId));
+    dispatch(deleteTodo(todoId));
   };
 
   return (
     <div className="flex items-center justify-start p-2 space-x-4 border-b hover:bg-gray-100 hover:transition-all border-gray-400/20 last:border-0">
       <div
-        className={`flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 bg-white border-2 border-gray-400 rounded-full ${
+        className={`relative flex items-center justify-center flex-shrink-0 w-5 h-5 mr-2 bg-white border-2 border-gray-400 rounded-full ${
           completed && "border-green-500 focus-within:border-green-500"
         }`}
       >

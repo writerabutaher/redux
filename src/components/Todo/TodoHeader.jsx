@@ -1,5 +1,5 @@
-import addTodo from "@/redux/thunk/addTodo";
 import { allCompleted, clearCompleted } from "@/redux/todos/actions";
+import addTodo from "@/redux/todos/thunk/addTodo";
 import { GrNotes } from "react-icons/gr";
 import { LiaCheckDoubleSolid } from "react-icons/lia";
 import { LuPlusCircle } from "react-icons/lu";

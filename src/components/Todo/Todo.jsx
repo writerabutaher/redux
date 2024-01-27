@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchTodos } from "@/redux/thunk/fetchTodos";
+import { fetchTodos } from "@/redux/todos/thunk/fetchTodos";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TodoFooter from "./TodoFooter";

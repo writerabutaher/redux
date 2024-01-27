@@ -1,4 +1,4 @@
-import { added } from "../todos/actions";
+import { added } from "../actions";
 
 const addTodo = (todoText) => {
   return async (dispatch) => {
