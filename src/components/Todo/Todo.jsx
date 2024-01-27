@@ -1,6 +1,8 @@
 "use client";
 
-import { useSelector } from "react-redux";
+import { fetchTodos } from "@/redux/thunk/fetchTodos";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import TodoFooter from "./TodoFooter";
 import TodoHeader from "./TodoHeader";
 import TodoList from "./TodoList";
@@ -8,6 +10,11 @@ import TodoList from "./TodoList";
 const Todo = () => {
   const todos = useSelector((state) => state.todos);
   const filters = useSelector((state) => state.filters);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTodos);
+  }, [dispatch]);
 
   const filterByStatus = (todo) => {
     const { status } = filters;
